@@ -19,35 +19,40 @@ var work = {
             "title": "Scrum Master, Front-End Web Developer",
             "city": "Denver",
             "state": "CO",
-            "years": "July 2013 - Current"
+            "dates": "July 2013 - Current",
+            "description": "Responsible for leading all Scrum ceremonies, and leading all front-end web development."
         },
         {
             "employer": "CAP Logistics",
             "title": "Business Analyst",
             "city": "Denver",
             "state": "CO",
-            "years": "April 2010 - July 2013"
+            "dates": "April 2010 - July 2013",
+            "description": "Write software requirements, and design and build actionable business intelligence."
         },
         {
             "employer": "MECR Ventures, LLC",
             "title": "CO-Founder, Business Consultant",
             "city": "Denver",
             "state": "CO",
-            "years": "August 2008 - January 2011"
+            "dates": "August 2008 - January 2011",
+            "description": "Consult with businesses on business intelligence, recruiting, and business process."
         },
         {
             "employer": "Sigma Think Tank",
             "title": "CO-Founder",
             "city": "Denver",
             "state": "CO",
-            "years": "August 2008 - December 2010"
+            "dates": "August 2008 - December 2010",
+            "description": "Non-profit vendor free networking group."
         },
         {
             "employer": "Tradition Golf Club",
             "title": "Assistant General Manager",
             "city": "La Quinta",
             "state": "CA",
-            "years": "October 2005 - July 2008"
+            "dates": "October 2005 - July 2008",
+            "description": "Oversee all club operations."
         }
     ]
 };
@@ -129,6 +134,40 @@ var formattedContactGithub = HTMLgithub.replace("%data%", bio.contactInfo.github
 var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 
+
+
+function displayWork(){
+    if (work.positions.length > 0) {
+        for (position in work.positions) {
+            var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.positions[position].employer);
+            var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.positions[position].title);
+            var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
+            $("#workExperience").append(HTMLworkStart);
+            $(".work-entry:last").append(formattedEmployerTitle);
+
+            var formattedDates = HTMLworkDates.replace("%data%", work.positions[position].dates);
+            $(".work-entry:last").append(formattedDates);
+
+            var formattedDescripiton = HTMLworkDescription.replace("%data%", work.positions[position].description);
+            $(".work-entry:last").append(formattedDescripiton);
+        }
+    }
+}
+
+$(document).click(function(loc) {
+    var x = loc.pageX;
+    var y = loc.pageY;
+    logClicks(x,y);
+});
+
+$("#header").prepend(formattedPic);
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+$("#topContacts").append(formattedContactPhone);
+$("#topContacts").append(formattedContactEmail);
+$("#topContacts").append(formattedContactGithub);
+$("#header").append(formattedWelcome);
+
 if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
 
@@ -136,25 +175,3 @@ if (bio.skills.length > 0) {
         $("#skills").append(HTMLskills.replace("%data%", bio.skills[skill]));
     }
 }
-
-if (work.positions.length > 0) {
-    for (position in work.positions) {
-        var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.positions[position].employer);
-        var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.positions[position].title);
-        var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
-
-        $("#workExperience").append(HTMLworkStart);
-        $(".work-entry:last").append(formattedEmployerTitle);
-    }
-}
-
-$("#header").append(formattedPic);
-$("#header").prepend(formattedName);
-$("#header").append(formattedRole);
-$("#header").append(formattedContactPhone);
-$("#header").append(formattedContactEmail);
-$("#header").append(formattedContactGithub);
-$("#header").append(formattedWelcome);
-//$("#header").append(HTMLskillsStart);
-// $("#header").append(formattedSkills);
-
