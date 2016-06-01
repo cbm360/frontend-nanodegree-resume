@@ -9,7 +9,8 @@ var bio = {
     },
     "picture": "images/headshot.jpg",
     "welcomeMessage": "Life Long Learner, Team Leader, Front-End Web Developer, Scrum Master",
-    "skills": [" JavaScript", " jQuery", " NodeJS", " Aurelia", " KnockoutJS", " Leaflet", " Ruby on Rails", " GIT", " Visual Studio Online", " Twitter Bootstrap", " HTML5", " CSS3", " T-SQL", " MongoDB"]
+    "skills": [" JavaScript", " jQuery", " NodeJS", " Aurelia", " KnockoutJS", " Leaflet", " Ruby on Rails", " GIT", " Visual Studio Online", " Twitter Bootstrap", " HTML5", " CSS3", " T-SQL", " MongoDB"],
+    "location": "Denver, CO"
 };
 
 var work = {
@@ -131,6 +132,7 @@ var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedContactPhone = HTMLmobile.replace("%data%", bio.contactInfo.phone);
 var formattedContactEmail = HTMLemail.replace("%data%", bio.contactInfo.email);
 var formattedContactGithub = HTMLgithub.replace("%data%", bio.contactInfo.github);
+var formattedLocation = HTMLlocation.replace("%data%", bio.location);
 var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 
@@ -166,6 +168,7 @@ $("#header").prepend(formattedName);
 $("#topContacts").append(formattedContactPhone);
 $("#topContacts").append(formattedContactEmail);
 $("#topContacts").append(formattedContactGithub);
+$("#topContacts").append(formattedLocation);
 $("#header").append(formattedWelcome);
 
 if (bio.skills.length > 0) {
