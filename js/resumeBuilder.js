@@ -10,7 +10,7 @@ var bio = {
     },
     "picture": "images/headshot.jpg",
     "welcomeMessage": "Life Long Learner, Team Leader, Front-End Web Developer, Scrum Master",
-    "skills": [" JavaScript", " jQuery", " NodeJS", " Aurelia", " KnockoutJS", " Leaflet", " Ruby on Rails", " Twitter Bootstrap", " HTML5", " CSS3"]
+    "skills": ["Scrum", " JavaScript", " NodeJS", " Aurelia", " KnockoutJS", " Leaflet", " Ruby on Rails", " Twitter Bootstrap", " HTML5", " CSS3"]
 };
 
 var work = {
@@ -143,7 +143,6 @@ bio.display = function() {
     $("#topContacts").append(formattedContactEmail);
     $("#topContacts").append(formattedContactGithub);
     $("#topContacts").append(formattedLocation);
-    $("#header").append(formattedWelcome);
 
     if (bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
