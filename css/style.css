@@ -168,6 +168,32 @@ span {
   text-align: center;
 }
 
+#treeResume {
+    background-color: #fff;
+}
+
+.node {
+    cursor: pointer;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: black;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font: 12px sans-serif;
+    overflow-x: auto;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
+
+
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {

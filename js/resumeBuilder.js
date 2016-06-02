@@ -58,6 +58,7 @@ var education = {
         {
             "name": "University of Northern Colorado",
             "degree": "Bachelors Degree Communication",
+
             "years": "1998 - 2002",
             "location": "Greeley, CO"
         },
@@ -68,7 +69,7 @@ var education = {
             "location": "Greeley, CO"
         }
     ],
-    "Online Courses": [
+    "OnlineCourses": [
         {
             "name": "Udacity",
             "degree": "Nanodegree Front-End Web Developer",
@@ -195,7 +196,32 @@ work.display = function() {
 }
 work.display();
 
-function mapDisplay() {
+education.display = function(){
+    if (education.schools.length > 0) {
+        for (school in education.schools) {
+            $("#education").append(HTMLschoolStart);
+
+            var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+            $(".education-entry:last").append(formattedSchoolName);
+
+            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+            $(".education-entry:last").append(formattedSchoolDegree);
+
+            var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+            $(".education-entry:last").append(formattedSchoolDates);
+
+            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+            $(".education-entry:last").append(formattedSchoolLocation);
+        }
+    }
+
+    if (education.OnlineCourses.length > 0) {
+
+    }
+}
+education.display();
+
+function mapDisplay(){
     $("#mapDiv").append(googleMap);
 }
 mapDisplay();
