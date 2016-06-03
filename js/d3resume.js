@@ -61,7 +61,7 @@ $(function () {
             links = tree.links(nodes);
 
         // Normalize for fixed-depth.
-        nodes.forEach(function(d) { d.y = d.depth * 290; });
+        nodes.forEach(function(d) { d.y = d.depth * (width/6); });
 
         // Update the nodes…
         var node = svg.selectAll("g.node")
