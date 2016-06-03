@@ -142,6 +142,9 @@ bio.display = function() {
     $("#topContacts").append(formattedContactEmail);
     $("#topContacts").append(formattedContactGithub);
     $("#topContacts").append(formattedLocation);
+    $("#footerContacts").append(formattedContactPhone);
+    $("#footerContacts").append(formattedContactEmail);
+    $("#footerContacts").append(formattedContactGithub);
 
     if (bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
