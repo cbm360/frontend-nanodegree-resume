@@ -38,9 +38,8 @@ var bio = {
             $("#header").append(HTMLskillsStart);
 
             for (skill in bio.skills) {
-                var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
-
                 if (bio.skills.hasOwnProperty(skill)) {
+                    var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
                     $("#skills").append(formattedSkills);
                 }
             }
