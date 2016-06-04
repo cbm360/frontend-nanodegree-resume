@@ -114,7 +114,7 @@ var education = {
         {
             "name": "University of Northern Colorado",
             "location": "Greeley, CO",
-            "degree": "Bachelors Degree Communication",
+            "degree": "BA",
             "majors": "Communication",
             "dates": "1998 - 2002",
             "url": "http://www.unco.edu"
@@ -122,7 +122,7 @@ var education = {
         {
             "name": "University of Northern Colorado",
             "location": "Greeley, CO",
-            "degree": "Bachelors Degree Business Administration and Management",
+            "degree": "BS",
             "majors": "Business Administration and Management",
             "dates": "1998 - 2002",
             "url": "http://www.unco.edu"
@@ -161,6 +161,9 @@ var education = {
 
                     var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
                     $(".education-entry:last").append(formattedSchoolLocation);
+
+                    var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+                    $(".education-entry:last").append(formattedSchoolMajor);
                 }
             }
         }
