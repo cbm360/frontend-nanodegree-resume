@@ -115,7 +115,7 @@ var education = {
             "name": "University of Northern Colorado",
             "location": "Greeley, CO",
             "degree": "BA",
-            "majors": "Communication",
+            "majors": "Communications",
             "dates": "1998 - 2002",
             "url": "http://www.unco.edu"
         },
