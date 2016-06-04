@@ -56,28 +56,33 @@ var education = {
     "schools": [
         {
             "name": "University of Northern Colorado",
+            "location": "Greeley, CO",
             "degree": "Bachelors Degree Communication",
-
-            "years": "1998 - 2002",
-            "location": "Greeley, CO"
+            "majors": "Communication",
+            "dates": "1998 - 2002",
+            "url": "http://www.unco.edu"
         },
         {
             "name": "University of Northern Colorado",
+            "location": "Greeley, CO",
             "degree": "Bachelors Degree Business Administration and Management",
-            "years": "1998 - 2002",
-            "location": "Greeley, CO"
+            "majors": "Business Administration and Management",
+            "dates": "1998 - 2002",
+            "url": "http://www.unco.edu"
         }
     ],
     "OnlineCourses": [
         {
-            "name": "Udacity",
-            "degree": "Nanodegree Front-End Web Developer",
-            "years": "2016"
+            "title": "Nanodegree Front-End Web Developer",
+            "school": "Udacity",
+            "date": "2016",
+            "url": "https://www.udacity.com"
         },
         {
-            "name": "Udemy",
-            "degree": "Complete Ruby on Rails Developer",
-            "years": "2016"
+            "title": "Complete Ruby on Rails Developer",
+            "school": "Udemy",
+            "date": "2016",
+            "url": "https://www.udemy.com"
         }
     ]
 };
@@ -219,7 +224,24 @@ education.display = function(){
     }
 
     if (education.OnlineCourses.length > 0) {
+        $("#education").append(HTMLonlineClasses);
 
+        for (course in education.OnlineCourses) {
+            $("#education").append(HTMLschoolStart);
+
+
+            var formattedCourseTitle = HTMLonlineTitle.replace("%data%", education.OnlineCourses[course].title);
+            $(".education-entry:last").append(formattedCourseTitle);
+
+            var formattedCourseScool = HTMLonlineSchool.replace("%data%", education.OnlineCourses[course].school);
+            $(".education-entry:last").append(formattedCourseScool);
+
+            var formattedCourseDate = HTMLonlineDates.replace("%data%", education.OnlineCourses[course].date);
+            $(".education-entry:last").append(formattedCourseDate);
+
+            var formattedCourseUrl = HTMLonlineURL.replace("%data%", education.OnlineCourses[course].url);
+            $(".education-entry:last").append(formattedCourseUrl);
+        }
     }
 }
 education.display();
