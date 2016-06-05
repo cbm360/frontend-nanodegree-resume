@@ -26,6 +26,9 @@ $(function () {
         root.x0 = height / 2;
         root.y0 = 0;
 
+        update(root);
+
+        // Initialize the display to show a few nodes.
         function collapse(d) {
             if (d.children) {
                 d._children = d.children;
@@ -34,18 +37,20 @@ $(function () {
             }
         }
 
-        // Initialize the display to show a few nodes.
-        root.children.forEach(collapse);
-        click(root.children[0]);
-        click(root.children[0].children[3]);
-        click(root.children[0].children[5]);
+        function initialDisplay(d) {
+            root.children.forEach(collapse);
+            click(root.children[0]);
+            click(root.children[0].children[3]);
+            click(root.children[0].children[5]);
 
-        click(root.children[1]);
-        click(root.children[1].children[0]);
-        click(root.children[1].children[4]);
-        click(root.children[1].children[8]);
+            click(root.children[1]);
+            click(root.children[1].children[0]);
+            click(root.children[1].children[4]);
+            click(root.children[1].children[8]);
+        }
+        initialDisplay();
 
-        update(root);
+
     });
 
     var tree = d3.layout.tree()
@@ -55,7 +60,6 @@ $(function () {
     d3.select(self.frameElement).style("height", "800px");
 
     function update(source) {
-
         // Compute the new tree layout.
         var nodes = tree.nodes(root).reverse(),
             links = tree.links(nodes);
