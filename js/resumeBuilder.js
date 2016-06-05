@@ -26,7 +26,6 @@ var bio = {
         $("#topContacts").append(formattedContactPhone);
         $("#topContacts").append(formattedContactEmail);
         $("#topContacts").append(formattedContactGithub);
-        $("#topContacts").append(formattedLocation);
         $("#header").append(formattedWelcome);
         $("#footerContacts").append(formattedContactPhone);
         $("#footerContacts").append(formattedContactEmail);
